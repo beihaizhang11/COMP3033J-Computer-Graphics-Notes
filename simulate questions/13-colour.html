@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Color and I/O Devices</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What are the three components of the HSV color space?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Red, Green, Blue</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Hue, Saturation, Value</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Cyan, Magenta, Yellow</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. X, Y, Z</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. In color modulation, if a red light (1,0,0) shines on a cyan surface (0,1,1), what color results?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. (1,1,1) White</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. (0,0,0) Black</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. (1,0,0) Red</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. (0,0,0) No reflection</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What does CMYK stand for in printing?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. Color, Mixture, Yellow, Kelvin</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. Cyan, Magenta, Yellow, Key (Black)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Contrast, Magnitude, Yield, Keen</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Color, Matrix, Yield, Key</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Which type of display technology requires a minimum refresh rate of 60Hz to prevent visible flicker?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. LCD</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. OLED</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. CRT</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. E-Ink</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What is the gamut of a device?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. The brightness range it can display</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. The set of colors it can display</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. The resolution of the display</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. The power consumption of the device</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. In additive color mixing, blue light + yellow light = green light.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. CCD sensors in digital cameras convert light directly into digital signals without any intermediate steps.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each color model with its primary application:</p>
+            <div class="matching-container">
+                <div class="matching-item">RGB</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Digital displays</option>
+                    <option>Printing</option>
+                    <option>Color wheel</option>
+                </select>
+                
+                <div class="matching-item">CMYK</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Digital displays</option>
+                    <option>Printing</option>
+                    <option>Color wheel</option>
+                </select>
+                
+                <div class="matching-item">HSV</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Digital displays</option>
+                    <option>Printing</option>
+                    <option>Color wheel</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. Which advance in technology earned the 2014 Nobel Prize?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. OLED displays</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. Blue LED</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. LCD technology</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. RGB color model</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What is the main advantage of LCD displays over CRT displays?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. Better color accuracy</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. No need for raster scanning</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Higher refresh rates</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. Lower power consumption</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - Hue, Saturation, Value</p>
+            <p>2. d - (0,0,0) No reflection</p>
+            <p>3. b - Cyan, Magenta, Yellow, Key (Black)</p>
+            <p>4. c - CRT</p>
+            <p>5. b - The set of colors it can display</p>
+            <p>9. b - Blue LED</p>
+            <p>10. b - No need for raster scanning</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. False - Additive and subtractive color mixing work differently</p>
+            <p>7. False - CCDs store charge and then transfer it to memory</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. RGB → Digital displays</p>
+            <p>8. CMYK → Printing</p>
+            <p>8. HSV → Color wheel</p>
+
+            <h4>Explanations:</h4>
+            <p>1. HSV represents color in terms of Hue (color), Saturation (intensity), and Value (brightness).</p>
+            <p>2. Red light on cyan surface results in no reflection as cyan absorbs red.</p>
+            <p>3. CMYK is the standard model used in color printing.</p>
+            <p>4. CRTs require high refresh rates due to phosphor decay.</p>
+            <p>5. Gamut refers to the complete subset of colors that can be accurately represented.</p>
+            <p>6. Color mixing works differently for light (additive) vs. pigments (subtractive).</p>
+            <p>7. CCDs store charge before converting to digital signals.</p>
+            <p>8. Each color model is optimized for specific applications.</p>
+            <p>9. The development of efficient blue LEDs was a crucial breakthrough.</p>
+            <p>10. LCD technology doesn't require electron beam scanning.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Geometric Modeling</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. Which of the following is NOT a Platonic solid?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Tetrahedron</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Octahedron</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Cylinder</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Icosahedron</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. In CSG (Constructive Solid Geometry), which operations can be performed with objects?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. Only union</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. Union and subtraction only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. Union, subtraction, and XOR</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. Only subtraction</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What parameters are used to define points on a sphere in parametric form?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. Height and width</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. Latitude (φ) and longitude (θ)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. X and Y coordinates only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Radius only</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>4. In a solid polyhedron, face normals must be specified in counterclockwise order.</p>
+            <div class="true-false">
+                <input type="radio" name="q4" id="q4t">
+                <label for="q4t">True</label>
+                <br>
+                <input type="radio" name="q4" id="q4f">
+                <label for="q4f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. For a sphere centered at the origin, every point on the sphere can serve as its own normal vector.</p>
+            <div class="true-false">
+                <input type="radio" name="q5" id="q5t">
+                <label for="q5t">True</label>
+                <br>
+                <input type="radio" name="q5" id="q5f">
+                <label for="q5f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Question -->
+        <div class="question">
+            <p>6. Match each geometric concept with its characteristic:</p>
+            <div class="matching-container">
+                <div class="matching-item">Platonic Solid</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>All faces are same size and shape</option>
+                    <option>Uses latitude and longitude</option>
+                    <option>Built from vertical strips</option>
+                </select>
+                
+                <div class="matching-item">Parametric Sphere</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>All faces are same size and shape</option>
+                    <option>Uses latitude and longitude</option>
+                    <option>Built from vertical strips</option>
+                </select>
+                
+                <div class="matching-item">Cylinder Approximation</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>All faces are same size and shape</option>
+                    <option>Uses latitude and longitude</option>
+                    <option>Built from vertical strips</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. c - Cylinder (It's not a Platonic solid as it has curved surfaces)</p>
+            <p>2. c - Union, subtraction, and XOR are all possible operations in CSG</p>
+            <p>3. b - Latitude (φ) and longitude (θ) are used to define points on a sphere</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>4. True - Face normals must be specified in counterclockwise order for proper rendering</p>
+            <p>5. True - For a unit sphere centered at the origin, each point's coordinates can serve as its normal vector</p>
+
+            <p><strong>Matching Question:</strong></p>
+            <p>Platonic Solid → All faces are same size and shape</p>
+            <p>Parametric Sphere → Uses latitude and longitude</p>
+            <p>Cylinder Approximation → Built from vertical strips</p>
+
+            <h4>Explanations:</h4>
+            <p>1. Cylinders have curved surfaces and are not Platonic solids, which must have regular polygon faces.</p>
+            <p>2. CSG allows multiple boolean operations between geometric objects.</p>
+            <p>3. Spherical coordinates use latitude and longitude to specify points on a sphere's surface.</p>
+            <p>4. Counterclockwise ordering is important for correct face culling and lighting calculations.</p>
+            <p>5. This property makes normal calculations for spheres particularly simple.</p>
+            <p>6. Each geometric concept has distinct characteristics that define how it's constructed and represented.</p>
+        </div>
+    </div>
+</body>
+</html>

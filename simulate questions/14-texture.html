@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Textures</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What is a texel?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. A texture coordinate</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. A pixel in a texture image</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. A surface parameter</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. A texture transformation</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What is the range of texture coordinates in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. -1 to 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. 0 to 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. 0 to image width/height</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. -∞ to +∞</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Which interpolation method is best for geometric textures?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. GL_NEAREST</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. GL_LINEAR</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Trilinear</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Anisotropic</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. In texture mapping, what do (s,t) coordinates represent?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. Screen coordinates</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. Surface parameters</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. Texel indices</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. Color values</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What happens when texture coordinates are outside the [0,1] range?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. Texture is always black</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. Texture either clamps or repeats based on settings</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. Program crashes</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. Coordinates are automatically normalized</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. Bilinear interpolation uses the 4 nearest texels to compute the final color.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. OpenGL's texture matrix is non-identity by default.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each texture operation with its purpose:</p>
+            <div class="matching-container">
+                <div class="matching-item">Scaling</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Adjusts brightness by multiplication</option>
+                    <option>Ensures values stay in range</option>
+                    <option>Converts to pixel format</option>
+                </select>
+                
+                <div class="matching-item">Clamping</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Adjusts brightness by multiplication</option>
+                    <option>Ensures values stay in range</option>
+                    <option>Converts to pixel format</option>
+                </select>
+                
+                <div class="matching-item">Rasterization</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Adjusts brightness by multiplication</option>
+                    <option>Ensures values stay in range</option>
+                    <option>Converts to pixel format</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What OpenGL function is used to specify texture coordinates for vertices?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. glTexCoord2f()</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. glVertex2f()</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. glTextureVertex()</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. glTexParameter()</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What is the purpose of texture modulation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. To replace the lighting calculation completely</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. To combine texture colors with lighting calculations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. To transform texture coordinates</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. To compress texture data</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - A pixel in a texture image</p>
+            <p>2. b - 0 to 1</p>
+            <p>3. a - GL_NEAREST</p>
+            <p>4. b - Surface parameters</p>
+            <p>5. b - Texture either clamps or repeats based on settings</p>
+            <p>9. a - glTexCoord2f()</p>
+            <p>10. b - To combine texture colors with lighting calculations</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. True - Bilinear interpolation uses 4 nearest texels</p>
+            <p>7. False - The texture matrix is identity by default</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Scaling → Adjusts brightness by multiplication</p>
+            <p>8. Clamping → Ensures values stay in range</p>
+            <p>8. Rasterization → Converts to pixel format</p>
+
+            <h4>Explanations:</h4>
+            <p>1. A texel is the fundamental unit of a texture image, similar to a pixel.</p>
+            <p>2. OpenGL uses normalized coordinates from 0 to 1 for texture mapping.</p>
+            <p>3. GL_NEAREST is better for geometric textures as it preserves sharp edges.</p>
+            <p>4. (s,t) coordinates are surface parameters that map to texture coordinates.</p>
+            <p>5. Texture coordinates outside [0,1] can be handled by clamping or repeating.</p>
+            <p>6. Bilinear interpolation uses a weighted average of the 4 nearest texels.</p>
+            <p>7. The texture matrix starts as identity until modified.</p>
+            <p>8. Each texture operation serves a specific purpose in texture processing.</p>
+            <p>9. glTexCoord2f() is the standard function for specifying texture coordinates.</p>
+            <p>10. Texture modulation combines texture colors with lighting calculations.</p>
+        </div>
+    </div>
+</body>
+</html>

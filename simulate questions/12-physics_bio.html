@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Physics & Biology of Vision</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What is the visible wavelength range for human vision?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. 200-400 nm</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. 350-700 nm</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. 700-1000 nm</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. 100-900 nm</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Which rendering technique is most suitable for real-time applications like video games?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. Ray Tracing</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. Projective Rendering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. Image-Based Rendering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. Photon Mapping</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What is the minimum frame rate typically needed for smooth motion perception?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. 15 fps</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. 24 fps</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. 60 fps</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. 120 fps</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What are the two types of photoreceptor cells in the human retina?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. Rods and Cones</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. RGB receptors</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. Photons and Electrons</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. Light and Dark receptors</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What is Alberti's Window in computer graphics context?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. A type of computer monitor</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. A method for creating 3D representations on a 2D canvas</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. A rendering algorithm</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. A type of graphics card</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. Light can be treated as both particles and waves in computer graphics applications.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. In reflection, the angle of incidence always equals the angle of reflection.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each rendering technique with its primary advantage:</p>
+            <div class="matching-container">
+                <div class="matching-item">Ray Tracing</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>High realism</option>
+                    <option>Real-time performance</option>
+                    <option>Uses real images</option>
+                </select>
+                
+                <div class="matching-item">Projective Rendering</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>High realism</option>
+                    <option>Real-time performance</option>
+                    <option>Uses real images</option>
+                </select>
+                
+                <div class="matching-item">Image-Based Rendering</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>High realism</option>
+                    <option>Real-time performance</option>
+                    <option>Uses real images</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What is the speed of light in meters per second?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. 1.99 x 1011 m/s</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. 2.99 x 1011 m/s</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. 3.99 x 1011 m/s</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. 4.99 x 1011 m/s</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What are the three types of light interaction discussed in the course?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. Emission, reflection, absorption</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. Reflection, refraction, diffraction</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Absorption, transmission, scattering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. Emission, transmission, diffraction</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - 350-700 nm</p>
+            <p>2. b - Projective Rendering</p>
+            <p>3. b - 24 fps</p>
+            <p>4. a - Rods and Cones</p>
+            <p>5. b - A method for creating 3D representations on a 2D canvas</p>
+            <p>9. b - 2.99 x 1011 m/s</p>
+            <p>10. a - Emission, reflection, absorption</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. True - Light exhibits both particle and wave properties</p>
+            <p>7. True - This is a fundamental law of reflection</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Ray Tracing → High realism</p>
+            <p>8. Projective Rendering → Real-time performance</p>
+            <p>8. Image-Based Rendering → Uses real images</p>
+
+            <h4>Explanations:</h4>
+            <p>1. The human eye can detect wavelengths between 350 and 700 nanometers.</p>
+            <p>2. Projective rendering is optimized for real-time applications.</p>
+            <p>3. 24 fps is the minimum for perceiving smooth motion.</p>
+            <p>4. Rods handle low-light vision while cones handle color vision.</p>
+            <p>5. Alberti's Window was an early concept for perspective drawing.</p>
+            <p>6. Different aspects of light behavior are modeled using both wave and particle properties.</p>
+            <p>7. This is a fundamental principle of specular reflection.</p>
+            <p>8. Each rendering technique has specific advantages for different applications.</p>
+            <p>9. This is the approximate speed of light in vacuum.</p>
+            <p>10. These are the primary ways light interacts with matter in basic graphics.</p>
+        </div>
+    </div>
+</body>
+</html>

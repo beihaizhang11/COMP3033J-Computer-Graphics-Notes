@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Animation & Hierarchical Modeling</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. Why is double buffering used in computer animation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. To increase rendering speed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. To prevent screen tearing and visual artifacts</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. To store backup frames</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. To enable motion blur</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. In hierarchical animation, what is the primary function of the pelvis bone?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. It connects the legs</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. It serves as the master bone from which all others inherit transformations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. It provides balance during walking</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. It controls the spine movement</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What is a keyframe in animation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. The first frame of an animation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. An important frame where joint angles are explicitly specified by an artist</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. The last frame of an animation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. A frame that repeats in the animation</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What is the minimum frame rate typically needed for smooth animation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. 16 fps</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. 24 fps</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. 30 fps</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. 60 fps</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What is Inverse Kinematics used for in animation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. To calculate collision detection</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. To calculate joint angles needed to achieve a desired end position</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. To simulate physics</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. To capture motion data</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. Motion capture data can be easily transferred between characters of different sizes without any modifications.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. In OpenGL, glPushMatrix() and glPopMatrix() must be balanced in your code.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each animation technique with its characteristic:</p>
+            <div class="matching-container">
+                <div class="matching-item">Motion Capture</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Measures real movement</option>
+                    <option>Relies on physics equations</option>
+                    <option>Uses important frames</option>
+                </select>
+                
+                <div class="matching-item">Physical Simulation</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Measures real movement</option>
+                    <option>Relies on physics equations</option>
+                    <option>Uses important frames</option>
+                </select>
+                
+                <div class="matching-item">Keyframe Animation</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Measures real movement</option>
+                    <option>Relies on physics equations</option>
+                    <option>Uses important frames</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What is the main purpose of a scene graph in animation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. To store texture information</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. To provide a hierarchical description of a scene</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. To manage memory allocation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. To handle user input</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What does a "bone" represent in character animation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. An actual skeletal bone</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. A separately transformed piece of the object with its own coordinate system</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. A connection point between joints</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. A texture mapping reference</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - Double buffering prevents screen tearing and visual artifacts</p>
+            <p>2. b - The pelvis serves as the master bone in the hierarchy</p>
+            <p>3. b - A keyframe is an important frame with explicitly specified joint angles</p>
+            <p>4. b - 24 fps is typically the minimum for smooth animation</p>
+            <p>5. b - Inverse Kinematics calculates joint angles for desired end positions</p>
+            <p>9. b - Scene graphs provide hierarchical scene description</p>
+            <p>10. b - A bone is a separately transformed piece with its own coordinate system</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. False - Motion capture data needs modification for different character sizes</p>
+            <p>7. True - glPushMatrix() and glPopMatrix() must be balanced</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Motion Capture → Measures real movement</p>
+            <p>8. Physical Simulation → Relies on physics equations</p>
+            <p>8. Keyframe Animation → Uses important frames</p>
+
+            <h4>Explanations:</h4>
+            <p>1. Double buffering prevents visual artifacts by showing completed frames only.</p>
+            <p>2. The pelvis is the root of the transformation hierarchy in character animation.</p>
+            <p>3. Keyframes are explicitly defined poses from which in-between frames are interpolated.</p>
+            <p>4. 24 fps is the traditional minimum for smooth motion perception.</p>
+            <p>5. IK solves for joint angles to achieve desired end effector positions.</p>
+            <p>6. Motion capture data needs scaling and adjustment for different character sizes.</p>
+            <p>7. Matrix stack operations must be balanced to maintain proper transformations.</p>
+            <p>8. Each animation technique has distinct characteristics and use cases.</p>
+            <p>9. Scene graphs organize hierarchical relationships in a scene.</p>
+            <p>10. Bones are transformation units in character animation, not necessarily anatomical.</p>
+        </div>
+    </div>
+</body>
+</html>

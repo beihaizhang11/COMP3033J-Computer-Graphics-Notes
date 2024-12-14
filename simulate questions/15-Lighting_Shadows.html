@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Lighting and Shadows</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What are the components of the Phong Lighting Model?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Direct, indirect, and ambient light</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Specular, diffuse, ambient, and emitted light</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Primary, secondary, and tertiary reflection</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Point, area, and volume lighting</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What determines the size of a specular highlight in the Phong model?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. The intensity of the light source</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. The distance to the light source</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. The exponent applied to the angle between normal and bisector</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. The surface area of the object</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. How is ambient light modeled in computer graphics?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. By calculating multiple light bounces</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. As a constant uniform light present everywhere</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. By simulating atmospheric scattering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Through ray tracing only</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. How does shadow mapping work in modern 3D graphics?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. By rendering simple dark circles beneath objects</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. By using depth comparison between light's view and camera's view</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. By calculating ray intersections</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. By using predefined shadow textures</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. How is diffuse reflection different from specular reflection?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. Diffuse reflection depends on viewing angle while specular doesn't</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. Diffuse reflection reflects uniformly in all directions, while specular reflection is view-dependent</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. Diffuse reflection only occurs on smooth surfaces</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. There is no difference between them</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. In perfect reflection, the angle of incidence equals the angle of reflection.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. OpenGL handles shadows automatically without any additional programming.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each lighting component with its characteristic:</p>
+            <div class="matching-container">
+                <div class="matching-item">Specular</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Creates highlights and is view-dependent</option>
+                    <option>Reflects uniformly in all directions</option>
+                    <option>Constant background illumination</option>
+                </select>
+                
+                <div class="matching-item">Diffuse</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Creates highlights and is view-dependent</option>
+                    <option>Reflects uniformly in all directions</option>
+                    <option>Constant background illumination</option>
+                </select>
+                
+                <div class="matching-item">Ambient</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Creates highlights and is view-dependent</option>
+                    <option>Reflects uniformly in all directions</option>
+                    <option>Constant background illumination</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. How does a raytracer determine if a point is in shadow?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. It checks the color of the point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. It sends a ray from the point to the light source and checks for intersections</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. It uses a predefined shadow map</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. It only checks the surface normal</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. How is colored lighting handled in computer graphics?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. By calculating a single average color</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. By performing separate calculations for R, G, and B channels</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. By using only the dominant color</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. By converting all colors to grayscale first</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - Specular, diffuse, ambient, and emitted light</p>
+            <p>2. c - The exponent applied to the angle between normal and bisector</p>
+            <p>3. b - As a constant uniform light present everywhere</p>
+            <p>4. b - By using depth comparison between light's view and camera's view</p>
+            <p>5. b - Diffuse reflection reflects uniformly in all directions, while specular reflection is view-dependent</p>
+            <p>9. b - It sends a ray from the point to the light source and checks for intersections</p>
+            <p>10. b - By performing separate calculations for R, G, and B channels</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. True - This is a fundamental law of reflection</p>
+            <p>7. False - OpenGL requires explicit shadow implementation</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Specular → Creates highlights and is view-dependent</p>
+            <p>8. Diffuse → Reflects uniformly in all directions</p>
+            <p>8. Ambient → Constant background illumination</p>
+
+            <h4>Explanations:</h4>
+            <p>1. The Phong model combines these four components to create realistic lighting.</p>
+            <p>2. The specular exponent controls how "shiny" the surface appears.</p>
+            <p>3. Ambient light is a simplified way to represent indirect illumination.</p>
+            <p>4. Shadow mapping is a common technique in modern graphics.</p>
+            <p>5. The key difference is how the light is scattered from the surface.</p>
+            <p>6. This is the fundamental principle of specular reflection.</p>
+            <p>7. Shadows must be explicitly implemented in OpenGL.</p>
+            <p>8. Each lighting component contributes differently to the final appearance.</p>
+            <p>9. Shadow rays are used to determine visibility to light sources.</p>
+            <p>10. Color channels are processed independently for accurate color lighting.</p>
+        </div>
+    </div>
+</body>
+</html>

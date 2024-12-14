@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Curves and Circles</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What defines C1 continuity in a curve?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. The curve is continuous</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. The curve's first derivative is continuous</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. The curve is smooth only at endpoints</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. The curve has no discontinuities</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What is the implicit form equation for a circle with center q and radius r?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. x² + y² = r²</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. (x - qx)² + (y - qy)² = r²</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. x = r cos(t), y = r sin(t)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. (x + qx)² + (y + qy)² = r²</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. How many control points are needed for a cubic Bézier curve?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. 2 points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. 3 points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. 4 points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. 5 points</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What defines a Hermite curve?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. 4 control points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. 2 endpoints and 2 slopes</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. 3 control points and a weight</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. A series of knot points</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What is the primary advantage of B-splines over piecewise Bézier curves?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. They require fewer control points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. They are G1 continuous</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. They are easier to compute</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. They require no matrix operations</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. A parametric curve representation is always computationally more efficient than implicit form.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. Bézier curves always pass through all their control points.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each curve type with its characteristic:</p>
+            <div class="matching-container">
+                <div class="matching-item">Bézier Curve</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses endpoints and slopes</option>
+                    <option>Contained in control point convex hull</option>
+                    <option>Uses knot points</option>
+                </select>
+                
+                <div class="matching-item">Hermite Curve</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses endpoints and slopes</option>
+                    <option>Contained in control point convex hull</option>
+                    <option>Uses knot points</option>
+                </select>
+                
+                <div class="matching-item">B-spline</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses endpoints and slopes</option>
+                    <option>Contained in control point convex hull</option>
+                    <option>Uses knot points</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What is the main purpose of de Casteljau's algorithm?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. To draw circles efficiently</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. To evaluate points on a Bézier curve</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. To convert between curve types</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. To find curve intersections</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What order polynomial is needed for C1 continuous curves with specified end points and slopes?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. Linear (degree 1)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. Quadratic (degree 2)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Cubic (degree 3)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. Quartic (degree 4)</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - The curve's first derivative is continuous</p>
+            <p>2. b - (x - qx)² + (y - qy)² = r²</p>
+            <p>3. c - 4 points</p>
+            <p>4. b - 2 endpoints and 2 slopes</p>
+            <p>5. b - They are G1 continuous</p>
+            <p>9. b - To evaluate points on a Bézier curve</p>
+            <p>10. c - Cubic (degree 3)</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. False - Parametric form can be computationally expensive</p>
+            <p>7. False - Bézier curves only pass through end points</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Bézier Curve → Contained in control point convex hull</p>
+            <p>8. Hermite Curve → Uses endpoints and slopes</p>
+            <p>8. B-spline → Uses knot points</p>
+
+            <h4>Explanations:</h4>
+            <p>1. C1 continuity means both the function and its first derivative are continuous.</p>
+            <p>2. This is the standard implicit equation for a circle with center q and radius r.</p>
+            <p>3. Cubic Bézier curves require exactly 4 control points.</p>
+            <p>4. Hermite curves are defined by endpoints and their slopes.</p>
+            <p>5. B-splines provide G1 continuity between segments.</p>
+            <p>6. Parametric form can involve expensive trigonometric calculations.</p>
+            <p>7. Only the first and last control points are interpolated.</p>
+            <p>8. Each curve type has distinct characteristics in how it's defined and controlled.</p>
+            <p>9. de Casteljau's algorithm is a numerical method for evaluating Bézier curves.</p>
+            <p>10. Cubic polynomials are needed to satisfy all continuity constraints.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Rasterization</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What is the main problem with using explicit form for line drawing?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. It's too slow</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. It doesn't work for slope > 1 and requires special handling</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. It can't handle color interpolation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. It requires too much memory</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. In barycentric coordinates (α,β,γ), what is always true?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. α = β = γ</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. α + β + γ = 0</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. α + β + γ = 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. α * β * γ = 1</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Which form is most suitable for color interpolation in line drawing?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. Explicit form</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. Implicit form</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Parametric form</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Normal form</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>4. In triangle rasterization, the winding order (clockwise or counterclockwise) affects which side is considered "inside" the triangle.</p>
+            <div class="true-false">
+                <input type="radio" name="q4" id="q4t">
+                <label for="q4t">True</label>
+                <br>
+                <input type="radio" name="q4" id="q4f">
+                <label for="q4f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. The half-plane test divides space into three regions when testing if a point is inside a triangle.</p>
+            <div class="true-false">
+                <input type="radio" name="q5" id="q5t">
+                <label for="q5t">True</label>
+                <br>
+                <input type="radio" name="q5" id="q5f">
+                <label for="q5f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Question -->
+        <div class="question">
+            <p>6. Match each rasterization approach with its key characteristic:</p>
+            <div class="matching-container">
+                <div class="matching-item">Explicit Form</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses slope-intercept equation</option>
+                    <option>Uses distance from line</option>
+                    <option>Uses time parameter</option>
+                </select>
+                
+                <div class="matching-item">Implicit Form</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses slope-intercept equation</option>
+                    <option>Uses distance from line</option>
+                    <option>Uses time parameter</option>
+                </select>
+                
+                <div class="matching-item">Parametric Form</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses slope-intercept equation</option>
+                    <option>Uses distance from line</option>
+                    <option>Uses time parameter</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - It doesn't work for slope > 1 and requires special handling</p>
+            <p>2. c - α + β + γ = 1</p>
+            <p>3. c - Parametric form</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>4. True - Clockwise winding means inside is on the right, counterclockwise means inside is on the left</p>
+            <p>5. False - The half-plane test divides space into two regions for each line of the triangle</p>
+
+            <p><strong>Matching Question:</strong></p>
+            <p>Explicit Form → Uses slope-intercept equation</p>
+            <p>Implicit Form → Uses distance from line</p>
+            <p>Parametric Form → Uses time parameter</p>
+
+            <h4>Explanations:</h4>
+            <p>1. The explicit form requires different handling for slopes > 1 and cases where run = 0, making the implementation more complex.</p>
+            <p>2. In barycentric coordinates, the sum of all coordinates must equal 1, which ensures proper interpolation.</p>
+            <p>3. Parametric form makes color interpolation straightforward as it naturally handles the progression from start to end point.</p>
+            <p>4. The winding order is crucial for determining which side of each edge is considered inside the triangle.</p>
+            <p>5. The half-plane test uses three line tests to determine if a point is inside a triangle, with each line dividing space into two regions.</p>
+            <p>6. Each form has its characteristic approach: explicit uses y=mx+b, implicit uses distance measurements, and parametric uses a time parameter t.</p>
+        </div>
+    </div>
+</body>
+</html>

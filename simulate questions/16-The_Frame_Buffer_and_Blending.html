@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Frame Buffer and Blending</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What are the main components of the frame buffer?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Front buffer and back buffer only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Color buffer, depth buffer, stencil buffer, and accumulation buffer</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. RGB buffer and alpha buffer only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Pixel buffer and texture buffer only</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What is the primary purpose of the accumulation buffer?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. To store depth information</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. To composite multiple images and create high-quality effects</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. To perform stencil operations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. To store color information</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What is the correct order of fragment operations in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. Depth test, alpha test, stencil test, scissor test</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. Scissor test, alpha test, stencil test, depth test</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Stencil test, depth test, alpha test, scissor test</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Alpha test, stencil test, scissor test, depth test</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What is the purpose of alpha blending in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. To create shadows</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. To implement transparency by combining new and old color values</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. To perform depth testing</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. To create texture mapping</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What is the purpose of multisampling in anti-aliasing?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. To increase frame rate</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. To sample more pixels than displayed and average them for smoother edges</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. To reduce memory usage</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. To increase color depth</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. When using alpha blending, the order of rendering objects is important - solid objects should be drawn before transparent ones.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. The stencil buffer can only be used for masking and cannot be modified during rendering.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each buffer type with its primary function:</p>
+            <div class="matching-container">
+                <div class="matching-item">Depth Buffer</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Stores z-depth information</option>
+                    <option>Enables masking operations</option>
+                    <option>Composites multiple images</option>
+                </select>
+                
+                <div class="matching-item">Stencil Buffer</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Stores z-depth information</option>
+                    <option>Enables masking operations</option>
+                    <option>Composites multiple images</option>
+                </select>
+                
+                <div class="matching-item">Accumulation Buffer</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Stores z-depth information</option>
+                    <option>Enables masking operations</option>
+                    <option>Composites multiple images</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What is the purpose of polygon offset in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. To create 3D effects</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. To slightly adjust polygon depth to avoid z-fighting</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. To increase polygon size</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. To create texture coordinates</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What is dithering used for in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. To create shadows</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. To approximate colors by mixing darker and lighter pixels</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. To perform anti-aliasing</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. To create transparency effects</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. b - Color buffer, depth buffer, stencil buffer, and accumulation buffer</p>
+            <p>2. b - To composite multiple images and create high-quality effects</p>
+            <p>3. b - Scissor test, alpha test, stencil test, depth test</p>
+            <p>4. b - To implement transparency by combining new and old color values</p>
+            <p>5. b - To sample more pixels than displayed and average them for smoother edges</p>
+            <p>9. b - To slightly adjust polygon depth to avoid z-fighting</p>
+            <p>10. b - To approximate colors by mixing darker and lighter pixels</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. True - Order matters for correct transparency</p>
+            <p>7. False - The stencil buffer can be modified during rendering</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Depth Buffer → Stores z-depth information</p>
+            <p>8. Stencil Buffer → Enables masking operations</p>
+            <p>8. Accumulation Buffer → Composites multiple images</p>
+
+            <h4>Explanations:</h4>
+            <p>1. The frame buffer consists of multiple components each serving different purposes.</p>
+            <p>2. The accumulation buffer is used for effects requiring multiple image combination.</p>
+            <p>3. Fragment operations follow a specific order in the OpenGL pipeline.</p>
+            <p>4. Alpha blending enables transparency effects by combining colors.</p>
+            <p>5. Multisampling improves image quality by averaging multiple samples.</p>
+            <p>6. Render order is crucial for correct transparency effects.</p>
+            <p>7. The stencil buffer can be dynamically modified during rendering.</p>
+            <p>8. Each buffer type serves a specific purpose in the rendering pipeline.</p>
+            <p>9. Polygon offset helps avoid z-fighting in overlapping geometries.</p>
+            <p>10. Dithering is used to approximate colors on limited color displays.</p>
+        </div>
+    </div>
+</body>
+</html>

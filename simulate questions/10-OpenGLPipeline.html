@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - OpenGL Pipeline</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What does the suffix '3fv' in an OpenGL function name (e.g., glVertex3fv) indicate?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. 3 dimensions, floating point, vector (array)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. 3 parameters, fixed point, variable</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Version 3, float, vertex</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Triple precision, float value</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What happens when using gluLookAt() function?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. Creates a perspective projection</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. Specifies the camera position, target point, and up vector</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. Defines the viewing frustum</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. Sets up the viewport</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. In OpenGL's lighting model, what happens when GL_LIGHTING is enabled?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. glColor() is used for vertex colors</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. glMaterial() is used instead of glColor()</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Textures are disabled</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Normal vectors are ignored</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What is the purpose of double buffering in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. To store both color and depth information</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. To prevent visual artifacts during rendering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. To support both 2D and 3D rendering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. To increase rendering speed</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Which OpenGL matrix combines both model and view transformations?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. GL_PROJECTION matrix</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. GL_MODELVIEW matrix</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. GL_TEXTURE matrix</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. GL_VIEWPORT matrix</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. OpenGL stores matrices in column-major order.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. The glLoadIdentity() function must be called before applying any new transformations.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each OpenGL stage with its primary function:</p>
+            <div class="matching-container">
+                <div class="matching-item">Vertex Operations</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Geometric transformations</option>
+                    <option>Convert triangles to pixels</option>
+                    <option>Texture and fragment operations</option>
+                </select>
+                
+                <div class="matching-item">Rasterization</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Geometric transformations</option>
+                    <option>Convert triangles to pixels</option>
+                    <option>Texture and fragment operations</option>
+                </select>
+                
+                <div class="matching-item">Pixel Operations</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Geometric transformations</option>
+                    <option>Convert triangles to pixels</option>
+                    <option>Texture and fragment operations</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What parameters are required by gluPerspective()?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. left, right, bottom, top, near, far</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. fovy, aspect, zNear, zFar</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. width, height, depth</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. eye position, look at point, up vector</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What restrictions exist between glBegin() and glEnd()?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. No restrictions apply</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. Only glVertex() calls are allowed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Only vertex attributes (glVertex, glNormal, glColor, glMaterial, glTexCoord) are allowed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. Matrix operations are not allowed</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. a - 3 dimensions, floating point, vector (array)</p>
+            <p>2. b - Specifies the camera position, target point, and up vector</p>
+            <p>3. b - glMaterial() is used instead of glColor()</p>
+            <p>4. b - To prevent visual artifacts during rendering</p>
+            <p>5. b - GL_MODELVIEW matrix</p>
+            <p>9. b - fovy, aspect, zNear, zFar</p>
+            <p>10. c - Only vertex attributes are allowed</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. True - OpenGL uses column-major order for matrix storage</p>
+            <p>7. True - glLoadIdentity() should be called before new transformations</p>
+
+            <p><strong>Matching Question:</strong></p>
+            <p>8. Vertex Operations → Geometric transformations</p>
+            <p>8. Rasterization → Convert triangles to pixels</p>
+            <p>8. Pixel Operations → Texture and fragment operations</p>
+
+            <h4>Explanations:</h4>
+            <p>1. The suffix indicates dimensions (3), data type (float), and array format (vector).</p>
+            <p>2. gluLookAt() sets up the camera view transformation.</p>
+            <p>3. When lighting is enabled, material properties are used instead of direct colors.</p>
+            <p>4. Double buffering prevents screen tearing and flickering during rendering.</p>
+            <p>5. The modelview matrix combines model and view transformations.</p>
+            <p>6. Column-major order is the standard matrix storage format in OpenGL.</p>
+            <p>7. This ensures a clean slate for new transformations.</p>
+            <p>8. Each stage in the pipeline has specific responsibilities.</p>
+            <p>9. These parameters define the perspective projection.</p>
+            <p>10. Only vertex attribute commands are allowed between glBegin() and glEnd().</p>
+        </div>
+    </div>
+</body>
+</html>

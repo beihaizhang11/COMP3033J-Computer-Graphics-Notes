@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .true-false {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .answers {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Computer Graphics Quiz - Projective Rendering & Transformations</h2>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What is the key difference between ray tracing and projective rendering?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Ray tracing computes one pixel at a time while projective rendering computes multiple pixels</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Ray tracing is faster than projective rendering</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Ray tracing only works for 2D objects</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Projective rendering only works for spheres</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Which transformation does NOT affect surface normals?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. Translation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. Shearing</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. Non-uniform scaling</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. All affect normals</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What is the correct order of applying transformations when scaling, rotating, and translating an object?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. Scale → Rotate → Translate</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. Translate → Scale → Rotate</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Rotate → Translate → Scale</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. The order doesn't matter</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What is Z-buffering used for?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. Sorting objects by color</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. Determining which objects are visible at each pixel</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. Calculating object rotations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. Storing texture coordinates</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Which coordinate system is used to define an object's shape?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. World Coordinate System (WCS)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. View Coordinate System (VCS)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. Object Coordinate System (OCS)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. Screen Coordinate System</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>6. In parallel projection, parallel lines in the world always remain parallel in the projection.</p>
+            <div class="true-false">
+                <input type="radio" name="q6" id="q6t">
+                <label for="q6t">True</label>
+                <br>
+                <input type="radio" name="q6" id="q6f">
+                <label for="q6f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. The inverse of a rotation matrix is always equal to its transpose.</p>
+            <div class="true-false">
+                <input type="radio" name="q7" id="q7t">
+                <label for="q7t">True</label>
+                <br>
+                <input type="radio" name="q7" id="q7f">
+                <label for="q7f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <p>8. Match each transformation with its characteristic:</p>
+            <div class="matching-container">
+                <div class="matching-item">Translation</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Moves object without changing orientation</option>
+                    <option>Changes size of object</option>
+                    <option>Changes orientation around axis</option>
+                </select>
+                
+                <div class="matching-item">Scaling</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Moves object without changing orientation</option>
+                    <option>Changes size of object</option>
+                    <option>Changes orientation around axis</option>
+                </select>
+                
+                <div class="matching-item">Rotation</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Moves object without changing orientation</option>
+                    <option>Changes size of object</option>
+                    <option>Changes orientation around axis</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. Match each coordinate system with its primary use:</p>
+            <div class="matching-container">
+                <div class="matching-item">World Coordinates (WCS)</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Reference frame for entire scene</option>
+                    <option>Define object shape</option>
+                    <option>Camera perspective</option>
+                </select>
+                
+                <div class="matching-item">Object Coordinates (OCS)</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Reference frame for entire scene</option>
+                    <option>Define object shape</option>
+                    <option>Camera perspective</option>
+                </select>
+                
+                <div class="matching-item">View Coordinates (VCS)</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Reference frame for entire scene</option>
+                    <option>Define object shape</option>
+                    <option>Camera perspective</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What happens in the Painter's Algorithm when three triangles overlap cyclically?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. The algorithm works perfectly</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. The algorithm fails as no correct drawing order exists</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Only the first triangle is drawn</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. All triangles become transparent</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>Answer Key:</h3>
+            <p><strong>Multiple Choice Questions:</strong></p>
+            <p>1. a - Ray tracing computes one pixel at a time while projective rendering computes multiple pixels</p>
+            <p>2. a - Translation does not affect surface normals</p>
+            <p>3. a - Scale → Rotate → Translate (matrices are multiplied in reverse order)</p>
+            <p>4. b - Determining which objects are visible at each pixel</p>
+            <p>5. c - Object Coordinate System (OCS)</p>
+            <p>10. b - The algorithm fails as no correct drawing order exists</p>
+
+            <p><strong>True/False Questions:</strong></p>
+            <p>6. True - Parallel projection preserves parallel lines</p>
+            <p>7. True - For orthonormal rotation matrices, the inverse equals the transpose</p>
+
+            <p><strong>Matching Questions:</strong></p>
+            <p>8. Translation → Moves object without changing orientation</p>
+            <p>8. Scaling → Changes size of object</p>
+            <p>8. Rotation → Changes orientation around axis</p>
+            <p>9. WCS → Reference frame for entire scene</p>
+            <p>9. OCS → Define object shape</p>
+            <p>9. VCS → Camera perspective</p>
+
+            <h4>Explanations:</h4>
+            <p>1. Ray tracing processes pixels individually by tracing rays, while projective rendering handles multiple pixels by projecting objects.</p>
+            <p>2. Translation only moves objects without changing their orientation or scale, so normals remain unchanged.</p>
+            <p>3. Transformation matrices are multiplied in reverse order of the desired operations.</p>
+            <p>4. Z-buffering solves the visibility problem by keeping track of depth at each pixel.</p>
+            <p>5. OCS is used to define an object's shape in its local coordinate system.</p>
+            <p>6. This is a key property of parallel projection used in engineering drawings.</p>
+            <p>7. This is a special property of orthonormal rotation matrices.</p>
+            <p>8. Each transformation has distinct effects on object geometry.</p>
+            <p>9. Each coordinate system serves a specific purpose in the rendering pipeline.</p>
+            <p>10. This is a classic case where the Painter's Algorithm fails, necessitating other techniques like Z-buffering.</p>
+        </div>
+    </div>
+</body>
+</html>
