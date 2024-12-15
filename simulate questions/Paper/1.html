@@ -1,0 +1,777 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 900px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .section-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Computer Graphics Comprehensive Exam (Part 1: Questions 1-30)</h1>
+
+        <!-- Color and I/O Devices Section -->
+        <div class="section-header">
+            Color and I/O Devices
+        </div>
+
+        <div class="question">
+            <span class="tag">Color Theory</span>
+            <p>1. In the RGB color model, what color is produced by mixing Red (255,0,0) and Green (0,255,0)?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Blue</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Yellow</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Magenta</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. White</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Color Spaces</span>
+            <p>2. Which color space is most commonly used for print media?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. RGB</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. CMYK</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. HSV</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. YUV</label>
+            </div>
+        </div>
+
+        <!-- Texture Mapping Section -->
+        <div class="section-header">
+            Texture Mapping
+        </div>
+
+        <div class="question">
+            <span class="tag">Texture Basics</span>
+            <p>3. What is mipmapping primarily used for?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. Increasing texture resolution</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. Reducing aliasing in distant textures</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. Adding transparency to textures</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. Compressing texture data</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Texture Coordinates</span>
+            <p>4. What is the valid range for texture coordinates in OpenGL?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. -1 to 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. 0 to 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. -∞ to +∞</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. 0 to 255</label>
+            </div>
+        </div>
+
+        <!-- Lighting and Shadows Section -->
+        <div class="section-header">
+            Lighting and Shadows
+        </div>
+
+        <div class="question">
+            <span class="tag">Phong Model</span>
+            <p>5. What are the three components of the Phong reflection model?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. Ambient, Diffuse, Specular</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. Red, Green, Blue</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. Hue, Saturation, Value</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. Primary, Secondary, Tertiary</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Lighting</span>
+            <p>6. What is normal mapping used for in computer graphics?</p>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6a">
+                <label for="q6a">a. To change the actual geometry of a surface</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6b">
+                <label for="q6b">b. To fake surface detail by perturbing surface normals</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6c">
+                <label for="q6c">c. To map textures onto curved surfaces</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6d">
+                <label for="q6d">d. To normalize vertex coordinates</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Frame Buffer</span>
+            <p>7. What is the purpose of double buffering?</p>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7a">
+                <label for="q7a">a. To increase memory capacity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7b">
+                <label for="q7b">b. To prevent screen tearing and provide smooth animation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7c">
+                <label for="q7c">c. To store texture coordinates</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7d">
+                <label for="q7d">d. To improve color depth</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Curves</span>
+            <p>8. What defines the smoothness of a curve mathematically?</p>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8a">
+                <label for="q8a">a. C0 continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8b">
+                <label for="q8b">b. C1 continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8c">
+                <label for="q8c">c. Position continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8d">
+                <label for="q8d">d. Geometric continuity</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Blending</span>
+            <p>9. In OpenGL, what function enables alpha blending?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. glAlphaFunc()</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. glEnable(GL_BLEND)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. glBlendFunc()</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. glTransparency()</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Texture Mapping</span>
+            <p>10. What is anisotropic filtering used for?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. Improving texture quality at oblique viewing angles</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. Reducing texture memory usage</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Creating 3D textures</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. Adding transparency to textures</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Lighting</span>
+            <p>11. What is the purpose of a light attenuation factor?</p>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11a">
+                <label for="q11a">a. To change light color</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11b">
+                <label for="q11b">b. To simulate light intensity decrease over distance</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11c">
+                <label for="q11c">c. To create shadow effects</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11d">
+                <label for="q11d">d. To control light direction</label>
+            </div>
+        </div>
+
+        <!-- Continue with matching questions -->
+        <div class="question">
+            <span class="tag">Concepts</span>
+            <p>12. Match the following terms with their descriptions:</p>
+            <div class="matching-container">
+                <div class="matching-item">Stencil Buffer</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Used for masking operations</option>
+                    <option>Stores depth information</option>
+                    <option>Handles color blending</option>
+                </select>
+                
+                <div class="matching-item">Z-Buffer</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Used for masking operations</option>
+                    <option>Stores depth information</option>
+                    <option>Handles color blending</option>
+                </select>
+                
+                <div class="matching-item">Alpha Buffer</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Used for masking operations</option>
+                    <option>Stores depth information</option>
+                    <option>Handles color blending</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Continue with true/false questions -->
+        <div class="question">
+            <span class="tag">Frame Buffer</span>
+            <p>13. True or False: The depth buffer must be cleared before each new frame is rendered.</p>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13t">
+                <label for="q13t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13f">
+                <label for="q13f">False</label>
+            </div>
+        </div>
+        <div class="question">
+            <span class="tag">Curves</span>
+            <p>14. What are the four points needed to define a cubic Bézier curve?</p>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14a">
+                <label for="q14a">a. Start point, end point, and two control points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14b">
+                <label for="q14b">b. Four control points of equal weight</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14c">
+                <label for="q14c">c. Three control points and one weight point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14d">
+                <label for="q14d">d. Two endpoints and two slope values</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Circle Drawing</span>
+            <p>15. What is the primary advantage of the parametric form of a circle over the implicit form?</p>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15a">
+                <label for="q15a">a. It's more computationally efficient</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15b">
+                <label for="q15b">b. It's easier to generate points along the circle</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15c">
+                <label for="q15c">c. It requires less memory</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15d">
+                <label for="q15d">d. It's more accurate</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">B-splines</span>
+            <p>16. What is a key advantage of B-splines over Bézier curves?</p>
+            <div class="radio-option">
+                <input type="radio" name="q16" id="q16a">
+                <label for="q16a">a. Local control over the curve shape</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q16" id="q16b">
+                <label for="q16b">b. Simpler mathematical formulation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q16" id="q16c">
+                <label for="q16c">c. Faster computation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q16" id="q16d">
+                <label for="q16d">d. Better memory efficiency</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Geometry</span>
+            <p>17. How is a line-circle intersection typically calculated?</p>
+            <div class="radio-option">
+                <input type="radio" name="q17" id="q17a">
+                <label for="q17a">a. Using parametric equations only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q17" id="q17b">
+                <label for="q17b">b. Using the quadratic formula with the circle and line equations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q17" id="q17c">
+                <label for="q17c">c. Through iterative approximation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q17" id="q17d">
+                <label for="q17d">d. Using vector cross products</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Hermite Curves</span>
+            <p>18. What defines a Hermite curve?</p>
+            <div class="radio-option">
+                <input type="radio" name="q18" id="q18a">
+                <label for="q18a">a. Four control points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q18" id="q18b">
+                <label for="q18b">b. Two endpoints and two tangent vectors</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q18" id="q18c">
+                <label for="q18c">c. Three control points and one weight</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q18" id="q18d">
+                <label for="q18d">d. A series of knot points</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Curve Continuity</span>
+            <p>19. What type of continuity ensures that curves join smoothly?</p>
+            <div class="radio-option">
+                <input type="radio" name="q19" id="q19a">
+                <label for="q19a">a. C0 continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q19" id="q19b">
+                <label for="q19b">b. C1 continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q19" id="q19c">
+                <label for="q19c">c. G0 continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q19" id="q19d">
+                <label for="q19d">d. Position continuity only</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <span class="tag">Curves Theory</span>
+            <p>20. True or False: A cubic Bézier curve always passes through all its control points.</p>
+            <div class="radio-option">
+                <input type="radio" name="q20" id="q20t">
+                <label for="q20t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q20" id="q20f">
+                <label for="q20f">False</label>
+            </div>
+        </div>
+
+        <!-- Matching Questions -->
+        <div class="question">
+            <span class="tag">Curve Types</span>
+            <p>21. Match the curve types with their characteristics:</p>
+            <div class="matching-container">
+                <div class="matching-item">Bézier Curves</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses control points and convex hull property</option>
+                    <option>Uses endpoints and tangent vectors</option>
+                    <option>Uses knot vectors and local control</option>
+                </select>
+                
+                <div class="matching-item">Hermite Curves</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses control points and convex hull property</option>
+                    <option>Uses endpoints and tangent vectors</option>
+                    <option>Uses knot vectors and local control</option>
+                </select>
+                
+                <div class="matching-item">B-splines</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses control points and convex hull property</option>
+                    <option>Uses endpoints and tangent vectors</option>
+                    <option>Uses knot vectors and local control</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Circle Rasterization</span>
+            <p>22. Which method is most efficient for circle rasterization?</p>
+            <div class="radio-option">
+                <input type="radio" name="q22" id="q22a">
+                <label for="q22a">a. Parametric form with sin/cos</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q22" id="q22b">
+                <label for="q22b">b. Midpoint circle algorithm</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q22" id="q22c">
+                <label for="q22c">c. Implicit form checking all pixels</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q22" id="q22d">
+                <label for="q22d">d. Line approximation</label>
+            </div>
+        </div>
+        <div class="question">
+            <span class="tag">de Casteljau Algorithm</span>
+            <p>23. Explain the purpose of de Casteljau's algorithm in curve rendering.</p>
+            <textarea rows="3" cols="50"></textarea>
+        </div>
+
+        <div class="question">
+            <span class="tag">Circle Mathematics</span>
+            <p>24. What is the relationship between a circle's parametric and implicit forms?</p>
+            <div class="radio-option">
+                <input type="radio" name="q24" id="q24a">
+                <label for="q24a">a. They are equivalent representations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q24" id="q24b">
+                <label for="q24b">b. Parametric form is more general</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q24" id="q24c">
+                <label for="q24c">c. Implicit form is more general</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q24" id="q24d">
+                <label for="q24d">d. They describe different curves</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Curve Applications</span>
+            <p>25. In computer graphics, when would you choose to use Hermite curves over Bézier curves?</p>
+            <div class="radio-option">
+                <input type="radio" name="q25" id="q25a">
+                <label for="q25a">a. When specific tangent control is needed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q25" id="q25b">
+                <label for="q25b">b. When faster computation is required</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q25" id="q25c">
+                <label for="q25c">c. When memory usage is a concern</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q25" id="q25d">
+                <label for="q25d">d. When working with closed curves</label>
+            </div>
+        </div>
+
+        <!-- Continue with remaining questions -->
+        <div class="question">
+            <span class="tag">Advanced Curves</span>
+            <p>26. What is the primary advantage of NURBS curves?</p>
+            <div class="radio-option">
+                <input type="radio" name="q26" id="q26a">
+                <label for="q26a">a. Exact representation of conic sections</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q26" id="q26b">
+                <label for="q26b">b. Simpler mathematical formulation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q26" id="q26c">
+                <label for="q26c">c. Faster rendering times</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q26" id="q26d">
+                <label for="q26d">d. Lower memory requirements</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Circle Properties</span>
+            <p>27. What determines the efficiency of circle rasterization algorithms?</p>
+            <div class="radio-option">
+                <input type="radio" name="q27" id="q27a">
+                <label for="q27a">a. Number of trigonometric calculations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q27" id="q27b">
+                <label for="q27b">b. Memory usage</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q27" id="q27c">
+                <label for="q27c">c. Number of pixels checked</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q27" id="q27d">
+                <label for="q27d">d. All of the above</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Curve Interpolation</span>
+            <p>28. What is the main purpose of curve interpolation in computer graphics?</p>
+            <div class="radio-option">
+                <input type="radio" name="q28" id="q28a">
+                <label for="q28a">a. To reduce memory usage</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q28" id="q28b">
+                <label for="q28b">b. To generate smooth transitions between points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q28" id="q28c">
+                <label for="q28c">c. To improve rendering speed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q28" id="q28d">
+                <label for="q28d">d. To compress curve data</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Curve Mathematics</span>
+            <p>29. Which mathematical property is most important for curve continuity?</p>
+            <div class="radio-option">
+                <input type="radio" name="q29" id="q29a">
+                <label for="q29a">a. Derivative continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q29" id="q29b">
+                <label for="q29b">b. Position continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q29" id="q29c">
+                <label for="q29c">c. Parameter continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q29" id="q29d">
+                <label for="q29d">d. Geometric continuity</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <span class="tag">Advanced Topics</span>
+            <p>30. What is the relationship between curve degree and control points in Bézier curves?</p>
+            <div class="radio-option">
+                <input type="radio" name="q30" id="q30a">
+                <label for="q30a">a. Degree = number of control points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q30" id="q30b">
+                <label for="q30b">b. Degree = number of control points - 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q30" id="q30c">
+                <label for="q30c">c. Degree = number of control points + 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q30" id="q30d">
+                <label for="q30d">d. No direct relationship</label>
+            </div>
+        </div>
+
+
+
+        <!-- Continue with more questions... -->
+
+        <!-- Answer explanations at the end -->
+        <div class="answers" style="margin-top: 50px; border-top: 2px solid #333; padding-top: 20px;">
+            <h3>Answer Key and Explanations:</h3>
+            <p><strong>1. b) Yellow</strong><br>
+            In RGB color model, mixing red and green light produces yellow.</p>
+            
+            <p><strong>2. b) CMYK</strong><br>
+            CMYK is optimized for print media as it represents subtractive color mixing.</p>
+            
+            <p><strong>3. b) Reducing aliasing in distant textures</strong><br>
+            Mipmapping stores pre-filtered versions of textures at different resolutions to reduce aliasing artifacts.</p>
+            
+            <p><strong>4. b) 0 to 1</strong><br>
+            OpenGL uses normalized texture coordinates ranging from 0 to 1.</p>
+            
+            <p><strong>5. a) Ambient, Diffuse, Specular</strong><br>
+            These are the three components that make up the Phong reflection model for realistic lighting.</p>
+        </div>
+        <div class="answers">
+            <h3>Additional Answer Key and Explanations:</h3>
+            
+            <p><strong>6. b)</strong> Normal mapping perturbs surface normals to create the illusion of surface detail without adding geometry.</p>
+            
+            <p><strong>7. b)</strong> Double buffering prevents screen tearing by allowing one buffer to be displayed while another is being drawn.</p>
+            
+            <p><strong>8. b)</strong> C1 continuity ensures both position and first derivative continuity, defining smoothness.</p>
+            
+            <p><strong>9. b)</strong> glEnable(GL_BLEND) enables alpha blending in OpenGL.</p>
+            
+            <p><strong>10. a)</strong> Anisotropic filtering improves texture quality when viewed at oblique angles.</p>
+            
+            <p><strong>11. b)</strong> Light attenuation simulates how light intensity decreases over distance in real world.</p>
+            
+            <p><strong>12.</strong>
+            - Stencil Buffer: Used for masking operations<br>
+            - Z-Buffer: Stores depth information<br>
+            - Alpha Buffer: Handles color blending</p>
+            
+            <p><strong>13. True</strong> The depth buffer needs to be cleared to ensure proper depth testing for each frame.</p>
+        </div>
+        <div class="answers">
+            <h3>Answer Key and Explanations (Questions 14-30):</h3>
+            
+            <p><strong>14. a)</strong> A cubic Bézier curve is defined by a start point, end point, and two control points that influence the curve's shape.</p>
+            
+            <p><strong>15. b)</strong> The parametric form makes it easier to generate points along the circle's circumference.</p>
+            
+            <p><strong>16. a)</strong> B-splines provide local control, meaning changes to control points only affect nearby portions of the curve.</p>
+            
+            <p><strong>17. b)</strong> Line-circle intersection is typically calculated using the quadratic formula derived from the implicit circle equation and parametric line equation.</p>
+            
+            <p><strong>18. b)</strong> Hermite curves are defined by two endpoints and their respective tangent vectors.</p>
+            
+            <p><strong>19. b)</strong> C1 continuity ensures that curves join smoothly by matching both position and first derivatives.</p>
+            
+            <p><strong>20. False</strong> A cubic Bézier curve only passes through its first and last control points.</p>
+            
+            <p><strong>21.</strong>
+            - Bézier Curves: Uses control points and convex hull property
+            - Hermite Curves: Uses endpoints and tangent vectors
+            - B-splines: Uses knot vectors and local control</p>
+            
+            <p><strong>22. b)</strong> The midpoint circle algorithm is most efficient as it uses only integer arithmetic.</p>
+            
+            <p><strong>23.</strong> The de Casteljau algorithm is used to evaluate points on a Bézier curve through recursive linear interpolation.</p>
+            
+            <p><strong>24. a)</strong> The parametric and implicit forms are equivalent representations of the same circle.</p>
+            
+            <p><strong>25. a)</strong> Hermite curves are preferred when specific tangent control is needed at endpoints.</p>
+            
+            <p><strong>26. a)</strong> NURBS curves can exactly represent conic sections like circles and ellipses.</p>
+            
+            <p><strong>27. d)</strong> All factors - trigonometric calculations, memory usage, and pixel checks - affect efficiency.</p>
+            
+            <p><strong>28. b)</strong> Curve interpolation is used to generate smooth transitions between points.</p>
+            
+            <p><strong>29. a)</strong> Derivative continuity is most important for ensuring smooth curves.</p>
+            
+            <p><strong>30. b)</strong> In Bézier curves, the degree is one less than the number of control points.</p>
+        </div>
+    </div>
+</body>
+</html>
