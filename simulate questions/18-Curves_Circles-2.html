@@ -1,0 +1,368 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .radio-option {
+            margin: 10px 0;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Curves & Circles Comprehensive Quiz</h1>
+
+        <!-- Questions 1-6 from previous part -->
+        <div class="question">
+            <p>1. What defines C1 continuity in curves?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Only position continuity</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Continuous derivative (smooth transitions)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Discontinuous functions</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Only geometric continuity</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. In parametric circle representation, what is the valid range for parameter t?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. 0 ≤ t ≤ 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. 0 ≤ t ≤ 2π</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. -π ≤ t ≤ π</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. -∞ ≤ t ≤ ∞</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Bézier curves always pass through all their control points.</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3t">
+                <label for="q3t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3f">
+                <label for="q3f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. B-splines provide local control over curve shape.</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4t">
+                <label for="q4t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4f">
+                <label for="q4f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Match the curve types with their characteristics:</p>
+            <div class="matching-container">
+                <div class="matching-item">Bézier Curves</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses control points and convex hull</option>
+                    <option>Uses endpoints and tangent vectors</option>
+                    <option>Uses knot vectors</option>
+                </select>
+
+                <div class="matching-item">Hermite Curves</div>
+                <select>
+                    <option>Choose...</option>
+                    <option>Uses control points and convex hull</option>
+                    <option>Uses endpoints and tangent vectors</option>
+                    <option>Uses knot vectors</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>6. What is the primary advantage of using the parametric form for circle representation over the implicit form?</p>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6a">
+                <label for="q6a">a. Better memory efficiency</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6b">
+                <label for="q6b">b. Easier point generation along the circle</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6c">
+                <label for="q6c">c. More accurate representation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6d">
+                <label for="q6d">d. Faster computation</label>
+            </div>
+        </div>
+
+        <!-- New Questions 7-15 -->
+        <div class="question">
+            <p>7. How many points are needed to define a cubic Bézier curve?</p>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7a">
+                <label for="q7a">a. 2 points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7b">
+                <label for="q7b">b. 3 points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7c">
+                <label for="q7c">c. 4 points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7d">
+                <label for="q7d">d. 5 points</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. The de Casteljau algorithm is primarily used for:</p>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8a">
+                <label for="q8a">a. Circle rasterization</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8b">
+                <label for="q8b">b. Line intersection</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8c">
+                <label for="q8c">c. Bézier curve evaluation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8d">
+                <label for="q8d">d. B-spline calculation</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. In B-splines, what is a knot?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. An endpoint</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. A control point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. A tangent vector</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. An intersection point</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What happens when we intersect a line with a circle?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. Always one intersection point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. Always two intersection points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. Zero, one, or two intersection points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. Three intersection points</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>11. A line approximation of a circle uses:</p>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11a">
+                <label for="q11a">a. Trigonometric functions only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11b">
+                <label for="q11b">b. A series of connected line segments</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11c">
+                <label for="q11c">c. Implicit equations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11d">
+                <label for="q11d">d. Continuous functions</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>12. For line-circle intersection, the discriminant B²-4AC determines:</p>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12a">
+                <label for="q12a">a. The circle's radius</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12b">
+                <label for="q12b">b. The line's slope</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12c">
+                <label for="q12c">c. The number of intersection points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12d">
+                <label for="q12d">d. The circle's center</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>13. Hermite curves are primarily used in:</p>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13a">
+                <label for="q13a">a. 3D modeling</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13b">
+                <label for="q13b">b. Drawing software</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13c">
+                <label for="q13c">c. Scientific visualization</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13d">
+                <label for="q13d">d. Game development</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>14. The explicit form of a circle equation is:</p>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14a">
+                <label for="q14a">a. (x-h)² + (y-k)² = r²</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14b">
+                <label for="q14b">b. y = ±√(r² - (x-h)²) + k</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14c">
+                <label for="q14c">c. x = r cos(t), y = r sin(t)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14d">
+                <label for="q14d">d. x² + y² = r²</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>15. True or False: Piecewise Bézier curves are always C1 continuous at their junction points.</p>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15t">
+                <label for="q15t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15f">
+                <label for="q15f">False</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>完整答案与解释：</h3>
+            
+            <p><strong>1. b)</strong> C1连续性要求导数连续，确保曲线的平滑过渡。</p>
+            
+            <p><strong>2. b)</strong> 在参数化圆表示中，参数t的范围是0到2π，完成一个完整的圆。</p>
+            
+            <p><strong>3. False</strong> Bézier曲线只通过第一个和最后一个控制点。</p>
+            
+            <p><strong>4. True</strong> B样条提供局部控制，修改控制点只影响曲线的局部形状。</p>
+            
+            <p><strong>5.</strong>
+            - Bézier曲线：使用控制点和凸包性质
+            - Hermite曲线：使用端点和切向量</p>
+            
+            <p><strong>6. b)</strong> 参数化形式更容易沿圆周生成点。</p>
+            
+            <p><strong>7. c)</strong> 三次Bézier曲线需要4个控制点。</p>
+            
+            <p><strong>8. c)</strong> de Casteljau算法主要用于计算Bézier曲线上的点。</p>
+            
+            <p><strong>9. b)</strong> 在B样条中，knot(节点)是一个控制点。</p>
+            
+            <p><strong>10. c)</strong> 直线与圆的交点可能有0个、1个或2个，取决于直线与圆的相对位置。</p>
+            
+            <p><strong>11. b)</strong> 圆的线段逼近使用一系列相连的线段。</p>
+            
+            <p><strong>12. c)</strong> 判别式B²-4AC决定了交点的数量。</p>
+            
+            <p><strong>13. b)</strong> Hermite曲线主要用于绘图软件。</p>
+            
+            <p><strong>14. b)</strong> 圆的显式方程是y = ±√(r² - (x-h)²) + k。</p>
+            
+            <p><strong>15. False</strong> 分段Bézier曲线在连接点不一定是C1连续的，需要额外的条件保证。</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+这是完整的15道题，包括所有问题和详细答案。题目涵盖了：
+1. 曲线连续性概念
+2. 参数化表示
+3. 各种曲线类型的特性
+4. 实际应用场景
+5. 数学表达式
+6. 几何概念
+
+需要对任何部分做进一步解释吗？

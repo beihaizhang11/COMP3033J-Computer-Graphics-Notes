@@ -1,0 +1,373 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .radio-option {
+            margin: 10px 0;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Homogeneous Coordinates & Perspective Projection Quiz</h1>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What characterizes 1-point perspective?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. All parallel lines converge to a single point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Lines parallel to view direction converge to a vanishing point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. All lines remain parallel</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. No lines converge</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. In 3D homogeneous coordinates, what does (x,y,z,w) represent?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. The point (x/w, y/w, z/w)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. The point (x,y,z)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. A vector</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. A plane</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What happens to parallel lines in 2-point perspective?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. They remain parallel</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. They converge to one point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. They converge to two different vanishing points unless perpendicular to view direction</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. They diverge</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. How are vectors represented in homogeneous coordinates?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. (x,y,z,1)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. (x,y,z,0)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. (x,y,z,w) where w≠0</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. (x,y,z)</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What is foreshortening?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. Objects appearing larger than they are</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. Objects appearing shorter as they recede from viewer</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. Objects becoming distorted</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. Objects becoming transparent</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>6. What is the advantage of composing transformation matrices?</p>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6a">
+                <label for="q6a">a. It makes transformations more accurate</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6b">
+                <label for="q6b">b. It reduces computational cost</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6c">
+                <label for="q6c">c. It allows more types of transformations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6d">
+                <label for="q6d">d. It simplifies matrix creation</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. What defines a view frustum?</p>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7a">
+                <label for="q7a">a. A rectangular volume</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7b">
+                <label for="q7b">b. A truncated pyramid</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7c">
+                <label for="q7c">c. A sphere</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7d">
+                <label for="q7d">d. A cylinder</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. What is true about homogeneous coordinates?</p>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8a">
+                <label for="q8a">a. They can only represent points</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8b">
+                <label for="q8b">b. They cannot represent projective transforms</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8c">
+                <label for="q8c">c. They can represent all affine transformations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8d">
+                <label for="q8d">d. They require 5 dimensions</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>9. True or False: In homogeneous coordinates, (2,4,6,2) represents the same point as (1,2,3,1).</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9t">
+                <label for="q9t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9f">
+                <label for="q9f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. True or False: Matrix multiplication order doesn't matter when composing transformations.</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10t">
+                <label for="q10t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10f">
+                <label for="q10f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>11. What happens to evenly spaced points under perspective projection?</p>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11a">
+                <label for="q11a">a. They remain evenly spaced</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11b">
+                <label for="q11b">b. They become closer together at greater distances</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11c">
+                <label for="q11c">c. They become further apart at greater distances</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11d">
+                <label for="q11d">d. They disappear</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>12. How many vanishing points are possible in perspective projection?</p>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12a">
+                <label for="q12a">a. Maximum of 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12b">
+                <label for="q12b">b. Maximum of 2</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12c">
+                <label for="q12c">c. Maximum of 3</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12d">
+                <label for="q12d">d. More than 3 possible</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>13. What is the structure of a homogeneous transformation matrix?</p>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13a">
+                <label for="q13a">a. 3x3 rotation only</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13b">
+                <label for="q13b">b. 4x4 with rotation, translation, projection, and 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13c">
+                <label for="q13c">c. 3x4 mixed matrix</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13d">
+                <label for="q13d">d. 2x2 transformation only</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>14. What is required for arbitrary rotation around a point?</p>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14a">
+                <label for="q14a">a. Only rotation matrix</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14b">
+                <label for="q14b">b. Translation followed by rotation</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14c">
+                <label for="q14c">c. Translation to origin, rotation, translation back</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14d">
+                <label for="q14d">d. Only translation matrix</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>15. What does the w component equal for a vector in homogeneous coordinates?</p>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15a">
+                <label for="q15a">a. 1</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15b">
+                <label for="q15b">b. 0</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15c">
+                <label for="q15c">c. Any non-zero value</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15d">
+                <label for="q15d">d. Infinity</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>完整答案与解释：</h3>
+            
+            <p><strong>1. b)</strong> 1点透视中，与视线方向平行的线会收敛到一个消失点，而垂直于视线方向的线保持平行。</p>
+            
+            <p><strong>2. a)</strong> 在3D齐次坐标中，(x,y,z,w)表示点(x/w, y/w, z/w)，其中w是缩放因子。</p>
+            
+            <p><strong>3. c)</strong> 在2点透视中，平行线会收敛到两个不同的消失点，除非它们垂直于视线方向。</p>
+            
+            <p><strong>4. b)</strong> 向量在齐次坐标中表示为(x,y,z,0)，因为向量表示方向而不是位置。</p>
+            
+            <p><strong>5. b)</strong> 透视缩短是指物体随着距离观察者越远而显得越短的现象。</p>
+            
+            <p><strong>6. b)</strong> 组合变换矩阵可以减少计算成本，避免多次矩阵乘法。</p>
+            
+            <p><strong>7. b)</strong> 视锥体是一个截断的金字塔形状，定义了可见的3D空间范围。</p>
+            
+            <p><strong>8. c)</strong> 齐次坐标可以表示所有仿射变换，包括平移、旋转、缩放和剪切。</p>
+            
+            <p><strong>9. True</strong> 在齐次坐标中，当w不同时，坐标按比例缩放后表示相同的点。</p>
+            
+            <p><strong>10. False</strong> 矩阵乘法顺序很重要，不同的顺序会产生不同的结果。</p>
+            
+            <p><strong>11. b)</strong> 在透视投影下，等距点在投影后会随距离增加而变得越来越近。</p>
+            
+            <p><strong>12. d)</strong> 可以有超过3个消失点，特别是当物体未对齐时。</p>
+            
+            <p><strong>13. b)</strong> 齐次变换矩阵是4x4的，包含旋转、平移、投影和1的组成部分。</p>
+            
+            <p><strong>14. c)</strong> 绕任意点旋转需要先平移到原点，进行旋转，然后平移回原位置。</p>
+            
+            <p><strong>15. b)</strong> 向量在齐次坐标中的w分量为0，这区别于点的表示。</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+这套题目涵盖了课件中的主要概念，包括：
+1. 透视投影的基本概念
+2. 齐次坐标系统
+3. 变换矩阵
+4. 视锥体
+5. 向量和点的表示
+6. 矩阵组合
+
+每个问题都有详细的解释，帮助理解相关概念。需要对任何部分做进一步解释吗？

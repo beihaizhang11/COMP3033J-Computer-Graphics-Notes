@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .radio-option {
+            margin: 10px 0;
+        }
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .matching-item {
+            padding: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Projective Rendering & Transformations Quiz</h1>
+
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. What is the main difference between ray tracing and projective rendering?</p>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1a">
+                <label for="q1a">a. Ray tracing processes one ray at a time, while projective rendering processes multiple pixels</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1b">
+                <label for="q1b">b. Ray tracing is slower but more accurate</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1c">
+                <label for="q1c">c. Projective rendering only works with triangles</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q1" id="q1d">
+                <label for="q1d">d. Ray tracing only works with spheres</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What is the main limitation of the Painter's Algorithm?</p>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2a">
+                <label for="q2a">a. It's too slow</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2b">
+                <label for="q2b">b. It can fail when objects cyclically overlap</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2c">
+                <label for="q2c">c. It only works with 2D objects</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q2" id="q2d">
+                <label for="q2d">d. It requires too much memory</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What is true about Z-buffering?</p>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3a">
+                <label for="q3a">a. It stores only color information</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3b">
+                <label for="q3b">b. It draws pixels only if new z is smaller</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3c">
+                <label for="q3c">c. It stores depth information with RGB values</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q3" id="q3d">
+                <label for="q3d">d. It requires pre-sorting of objects</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. How do normal vectors behave under translation transformations?</p>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4a">
+                <label for="q4a">a. They get distorted</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4b">
+                <label for="q4b">b. They remain unchanged</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4c">
+                <label for="q4c">c. They get reversed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q4" id="q4d">
+                <label for="q4d">d. They need special matrix transformation</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. What characterizes an orthonormal basis?</p>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5a">
+                <label for="q5a">a. Vectors are parallel and unit length</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5b">
+                <label for="q5b">b. Vectors are mutually perpendicular and unit length</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5c">
+                <label for="q5c">c. Vectors are only perpendicular</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q5" id="q5d">
+                <label for="q5d">d. Vectors are only unit length</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>6. What is true about affine transformations?</p>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6a">
+                <label for="q6a">a. They distort lines into curves</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6b">
+                <label for="q6b">b. They preserve lines and parallelism</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6c">
+                <label for="q6c">c. They always preserve angles</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q6" id="q6d">
+                <label for="q6d">d. They only allow rotations</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. How do rotation transformations affect normal vectors?</p>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7a">
+                <label for="q7a">a. Normals rotate with the geometry correctly</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7b">
+                <label for="q7b">b. Normals get distorted</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7c">
+                <label for="q7c">c. Normals remain fixed</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q7" id="q7d">
+                <label for="q7d">d. Normals need special correction</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. What is the correct order of matrix multiplication for transformations?</p>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8a">
+                <label for="q8a">a. Same order as desired transformations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8b">
+                <label for="q8b">b. Random order</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8c">
+                <label for="q8c">c. Reverse order of desired transformations</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q8" id="q8d">
+                <label for="q8d">d. Order doesn't matter</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. What is the primary characteristic of parallel projection?</p>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9a">
+                <label for="q9a">a. All lines converge to a point</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9b">
+                <label for="q9b">b. Parallel lines remain parallel</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9c">
+                <label for="q9c">c. Objects appear larger when closer</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q9" id="q9d">
+                <label for="q9d">d. All angles are preserved</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. What is true about inverse rotation matrices?</p>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10a">
+                <label for="q10a">a. They are equal to the transpose</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10b">
+                <label for="q10b">b. They must be recalculated completely</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10c">
+                <label for="q10c">c. They don't exist</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q10" id="q10d">
+                <label for="q10d">d. They are always identity matrices</label>
+            </div>
+        </div>
+
+        <!-- True/False Questions -->
+        <div class="question">
+            <p>11. True or False: Scaling transformations always preserve normal vectors.</p>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11t">
+                <label for="q11t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q11" id="q11f">
+                <label for="q11f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>12. True or False: The World Coordinate System (WCS) must always have its origin at the Earth's center.</p>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12t">
+                <label for="q12t">True</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q12" id="q12f">
+                <label for="q12f">False</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>13. In View Coordinates (VCS), which direction is typically used for the z-axis?</p>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13a">
+                <label for="q13a">a. Up</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13b">
+                <label for="q13b">b. Right</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13c">
+                <label for="q13c">c. Backward</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q13" id="q13d">
+                <label for="q13d">d. Forward</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>14. Which coordinate system is used to define the basic shape and size of an object?</p>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14a">
+                <label for="q14a">a. World Coordinate System (WCS)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14b">
+                <label for="q14b">b. View Coordinate System (VCS)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14c">
+                <label for="q14c">c. Object Coordinate System (OCS)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q14" id="q14d">
+                <label for="q14d">d. Screen Coordinate System</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>15. What happens when applying a negative scale transformation?</p>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15a">
+                <label for="q15a">a. The object disappears</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15b">
+                <label for="q15b">b. The object is reflected</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15c">
+                <label for="q15c">c. The object rotates</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="q15" id="q15d">
+                <label for="q15d">d. Nothing happens</label>
+            </div>
+        </div>
+
+        <!-- Answer Key -->
+        <div class="answers">
+            <h3>完整答案与解释：</h3>
+            
+            <p><strong>1. a)</strong> 光线追踪一次处理一个射线/像素，而投影渲染一次处理多个像素。</p>
+            
+            <p><strong>2. b)</strong> 当对象循环重叠时，画家算法会失败，因为无法确定正确的绘制顺序。</p>
+            
+            <p><strong>3. c)</strong> Z缓冲同时存储深度信息和RGB颜色值，用于确定像素的可见性。</p>
+            
+            <p><strong>4. b)</strong> 平移变换不会改变法向量，因为法向量表示的是相对方向。</p>
+            
+            <p><strong>5. b)</strong> 标准正交基的向量互相垂直且长度为1。</p>
+            
+            <p><strong>6. b)</strong> 仿射变换保持直线性质和平行关系，但可能改变角度和长度。</p>
+            
+            <p><strong>7. a)</strong> 旋转变换会正确地旋转法向量，保持其与表面的正确关系。</p>
+            
+            <p><strong>8. c)</strong> 变换矩阵的乘法顺序与期望的变换顺序相反。</p>
+            
+            <p><strong>9. b)</strong> 平行投影的主要特征是保持平行线的平行关系。</p>
+            
+            <p><strong>10. a)</strong> 对于正交旋转矩阵，其逆矩阵等于其转置矩阵。</p>
+            
+            <p><strong>11. False</strong> 缩放变换会扭曲法向量，特别是非均匀缩放。</p>
+            
+            <p><strong>12. False</strong> 世界坐标系的原点可以任意选择，不一定要在地球中心。</p>
+            
+            <p><strong>13. c)</strong> 在观察坐标系中，z轴通常指向后方（远离观察者）。</p>
+            
+            <p><strong>14. c)</strong> 物体坐标系(OCS)用于定义物体的基本形状和大小。</p>
+            
+            <p><strong>15. b)</strong> 负缩放会导致物体反射（镜像）。</p>
+        </div>
+    </div>
+</body>
+</html>
+
+这套题目涵盖了课件中的主要概念，包括：
+1. 渲染技术的比较
+2. 变换类型及其特性
+3. 坐标系统
+4. 法向量处理
+5. 投影类型
+6. 矩阵运算顺序
+
+每个问题都有详细的解释，帮助理解相关概念。需要对任何部分做进一步解释吗？
